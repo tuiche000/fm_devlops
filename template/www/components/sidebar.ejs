@@ -1,0 +1,59 @@
+<div class="book-summary">
+  <div class="book-summary-home" id="js-summary-home">
+    <a>
+      <span class="icon_home_s icon_dev"></span>
+      <span class="s_title_2">开发文档首页</span>
+    </a>
+  </div>
+  <nav role="navigation">
+
+
+    <ul class="summary">
+
+
+
+
+
+      <li class="chapter active open" data-level="1.1.1" data-path="." data-name="基础"><a href="https://developers.weixin.qq.com/miniprogram/dev/">基础</a>
+        <ul class="articles">
+          <!-- <% categories2.forEach(item => { %>
+            <li class="chapter active"><a href="https://developers.weixin.qq.com/miniprogram/dev/"><%= item.name %></a>
+              <ul class="articles">
+                <li class="chapter"><a href="">用户注册</a></li>
+                <li class="chapter"><a href="">用户登录</a></li>
+              </ul>
+            </li>
+            <% }) %> -->
+              <% categories2.forEach(item => { %>
+                <li class="chapter active" data-name="起步"><a href="https://developers.weixin.qq.com/miniprogram/dev/"><%= item.name %></a>
+                  <ul class="articles">
+                    <li class="chapter"><a href=""><%= item.id %></a></li>
+                  </ul>
+                </li>
+                <% }) %>
+
+        </ul>
+      </li>
+      <li class="chapter" data-level="1.1.2" data-path="./demo.html" data-name="体验小程序"><a href="https://developers.weixin.qq.com/miniprogram/dev/demo.html">体验小程序</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <li class="divider"></li>
+    </ul>
+
+
+  </nav>
+</div>
