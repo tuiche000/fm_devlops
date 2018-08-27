@@ -3,7 +3,7 @@ const Router = require('koa-router');
 let router = new Router();
 
 router.get('/', async (ctx, next) => {
-  let curInfo = ''
+  let curInfo = ['']
   if (ctx.query.infoId) {
     let infoId = ctx.query.infoId
     curInfo = await ctx.db.query(`SELECT id,title,category_id,content,submit_time FROM informations WHERE id='${infoId}'`)
