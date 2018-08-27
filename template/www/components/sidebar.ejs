@@ -24,13 +24,17 @@
               </ul>
             </li>
             <% }) %> -->
-              <% categories2.forEach(item => { %>
-                <li class="chapter active" data-name="起步"><a href="https://developers.weixin.qq.com/miniprogram/dev/"><%= item.name %></a>
-                  <ul class="articles">
-                    <li class="chapter"><a href=""><%= item.id %></a></li>
-                  </ul>
-                </li>
+          <% categories2.forEach(item => { %>
+            <li class="chapter active" data-name="起步"><a href=""><%= item.name %></a>
+              <ul class="articles">
+                <% info.forEach(item2 => { %>
+                <% if (item2.category_id == item.id) { %>
+                  <li class="chapter"><a href="?infoId=<%= item2.id %>"><%= item2.title %></a></li>
+                <% } %>
                 <% }) %>
+              </ul>
+            </li>
+            <% }) %>
 
         </ul>
       </li>

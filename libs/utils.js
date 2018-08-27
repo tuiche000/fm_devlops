@@ -1,6 +1,6 @@
 const crypto=require('crypto');
 const uuid=require('uuid/v4');
-console.log(uuid().replace(/\-/g, ''))
+// console.log(uuid().replace(/\-/g, ''))
 module.exports={
   md5(str){
     let obj=crypto.createHash('md5');
