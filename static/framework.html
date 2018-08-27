@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<!-- saved from url=(0107)https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE -->
+<html lang="">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>配置 · 小程序</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="description" content="微信小程序文档">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://developers.weixin.qq.com/miniprogram/assets/images/apple-touch-icon-precomposed-152.png?t=18082315">
+    <link rel="shortcut icon" href="https://developers.weixin.qq.com/miniprogram/assets/images/favicon.ico?t=18082315" type="image/x-icon">
+
+    <link rel="stylesheet" href="/style.css">
+
+    <link rel="next" href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/">
+
+
+    <link rel="prev" href="https://developers.weixin.qq.com/miniprogram/dev/framework/structure.html">
+
+</head>
+
+<body>
+
+    <div class="book with-summary with-header">
+        <div class="head">
+            <div class="head_box">
+                <h1 class="logo"><a href="javascript:;" title="_(&#39;微信公众平台 小程序&#39;)"></a></h1>
+                <div class="header_ctrls">
+                    <ul class="top_nav">
+                        <li class="top_nav_item dropdown" id="js_selected_introduction">
+                            <a class="top_nav_item_title" href="javascript:;" id="js_selected_title_introduction">介绍</a>
+                            <ul class="dropdown_menu">
+                                <li class="dropdown_menu_item">
+                                    <a class="top_nav_link" href="https://developers.weixin.qq.com/miniprogram/introduction/index.html?t=18082315">小程序介绍</a>
+                                </li>
+                                <li class="dropdown_menu_item">
+                                    <a class="top_nav_link" href="https://developers.weixin.qq.com/minigame/introduction/index.html?t=18082315">小游戏介绍</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="top_nav_item" id="js_selected_design">
+                            <a class="top_nav_item_title top_nav_link" href="https://developers.weixin.qq.com/miniprogram/design/index.html?t=18082315">设计</a>
+                        </li>
+                        <li class="top_nav_item dropdown selected" id="js_selected_dev">
+                            <a class="top_nav_item_title" href="javascript:;" id="js_selected_title_dev">小程序开发</a>
+                            <ul class="dropdown_menu">
+                                <li class="dropdown_menu_item">
+                                    <a class="top_nav_link" href="https://developers.weixin.qq.com/miniprogram/dev/index.html?t=18082315">小程序开发</a>
+                                </li>
+                                <li class="dropdown_menu_item">
+                                    <a class="top_nav_link" href="https://developers.weixin.qq.com/minigame/dev/index.html?t=18082315">小游戏开发</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="top_nav_item" id="js_selected_product">
+                            <a class="top_nav_item_title top_nav_link" href="https://developers.weixin.qq.com/miniprogram/product/index.html?t=18082315">运营</a>
+                        </li>
+                        <li class="top_nav_item dropdown" id="js_selected_analysis">
+                            <a class="top_nav_item_title" href="javascript:;" id="js_selected_title_analysis">数据</a>
+                            <ul class="dropdown_menu">
+                                <li class="dropdown_menu_item">
+                                    <a class="top_nav_link" href="https://developers.weixin.qq.com/miniprogram/analysis/index.html?t=18082315">小程序数据</a>
+                                </li>
+                                <li class="dropdown_menu_item">
+                                    <a class="top_nav_link" href="https://developers.weixin.qq.com/minigame/analysis/index.html?t=18082315">小游戏数据</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="top_nav_item" id="js_selected_bbs">
+                            <a class="top_nav_item_title" href="https://developers.weixin.qq.com/">社区</a>
+                        </li>
+                    </ul>
+
+                    <ul class="lang-tabs">
+                        <li class="lang-tab lang-zh lang-tab_current">
+                            <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html?t=18082315" class="lang-tab__nav">中文</a><span
+                                class="split-line">/</span>
+                        </li>
+                        <li class="lang-tab lang-en ">
+                            <!-- 禁用态加class: lang-tab_disabled -->
+                            <a href="https://developers.weixin.qq.com/miniprogram/en/dev/framework/config.html?t=18082315" class="lang-tab__nav">EN</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="sub_nav_box">
+            <div class="sub_nav_inner">
+                <div class="book-summary-opr" id="js-book-summary-opr">
+                    <a class="book-summary-btn"></a>
+                </div>
+                <div class="top_sub_nav">
+                    <div class="top_title_wap">
+                        <span class="icon_title icon_dev"></span>
+                        <p class="s_title_1">微信小程序开发文档</p>
+                    </div>
+
+                    <ul class="top_sub_list">
+                        <li class="sub_nav_item" data-level="1.1" data-path="../"><a href="https://developers.weixin.qq.com/miniprogram/dev/">简易教程</a></li>
+                        <li class="sub_nav_item selected" data-level="1.2" data-path="./MINA.html"><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/MINA.html">框架</a></li>
+                        <li class="sub_nav_item" data-level="1.3" data-path="../component/"><a href="https://developers.weixin.qq.com/miniprogram/dev/component/">组件</a></li>
+                        <li class="sub_nav_item" data-level="1.4" data-path="../api/"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/">API</a></li>
+                        <li class="sub_nav_item" data-level="1.5" data-path="../devtools/devtools.html"><a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/devtools.html">工具</a></li>
+                        <li class="sub_nav_item" data-level="1.6" data-path="../wxcloud/basis/getting-started.html"><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html">小程序·云开发</a></li>
+                        <li class="sub_nav_item" data-level="1.7" data-path="../qcloud/qcloud.html"><a href="https://developers.weixin.qq.com/miniprogram/dev/qcloud/qcloud.html">腾讯云支持</a></li>
+                    </ul>
+                </div>
+
+                <div id="book-search-input" role="search">
+                    <form>
+                        <label for="search-input" class="search-icon" id="js-search-icon"></label>
+                        <input type="text" id="search-input" name="search-input" placeholder="搜索">
+                        <button type="reset" class="clear-input-btn"></button>
+                    </form>
+                </div>
+
+                <ul class="lang-tabs">
+                    <li class="lang-tab lang-zh lang-tab_current">
+                        <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html?t=18082315" class="lang-tab__nav">中文</a><span
+                            class="split-line">/</span>
+                    </li>
+                    <li class="lang-tab lang-en ">
+                        <!-- 禁用态加class: lang-tab_disabled -->
+                        <a href="https://developers.weixin.qq.com/miniprogram/en/dev/framework/config.html?t=18082315" class="lang-tab__nav">EN</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="book-summary">
+            <div class="book-summary-home" id="js-summary-home">
+                <a>
+                    <span class="icon_home_s icon_dev"></span>
+                    <span class="s_title_2">开发文档首页</span>
+                </a>
+            </div>
+            <nav role="navigation">
+
+
+                <ul class="summary">
+
+
+
+
+
+
+
+                    <li class="chapter" data-level="1.2.1" data-path="./structure.html" data-name="目录结构"><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/structure.html">目录结构</a></li>
+                    <li class="chapter open" data-level="1.2.2" data-path="./config.html" data-name="配置"><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html">配置</a>
+                        <ul class="articles">
+                            <li class="chapter active" data-level="1.2.2.1" data-path="./config.html" data-name="全局配置"><a
+                                    href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE">全局配置</a></li>
+                            <li class="chapter" data-level="1.2.2.2" data-path="./config.html" data-name="页面配置"><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#%E9%A1%B5%E9%9D%A2%E9%85%8D%E7%BD%AE">页面配置</a></li>
+                        </ul>
+                    </li>
+                    <li class="chapter open" data-level="1.2.3" data-path="./app-service/" data-name="逻辑层"><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/">逻辑层</a>
+                        <ul class="articles">
+                            <li class="chapter" data-level="1.2.3.1" data-path="./app-service/app.html" data-name="注册程序"><a
+                                    href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/app.html">注册程序</a></li>
+                            <li class="chapter" data-level="1.2.3.2" data-path="./app-service/scene.html" data-name="场景值"><a
+                                    href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/scene.html">场景值</a></li>
+                            <li class="chapter" data-level="1.2.3.3" data-path="./app-service/page.html" data-name="注册页面"><a
+                                    href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/page.html">注册页面</a>
+                                <ul class="articles">
+                                    <li class="chapter" data-level="1.2.3.3.1" data-path="./app-service/page.html" data-name="初始数据"><a
+                                            href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/page.html#data">初始数据</a></li>
+                                    <li class="chapter" data-level="1.2.3.3.2" data-path="./app-service/page.html" data-name="生命周期回调函数"><a
+                                            href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/page.html#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0">生命周期回调函数</a></li>
+                                    <li class="chapter" data-level="1.2.3.3.3" data-path="./app-service/page.html" data-name="页面事件处理函数"><a
+                                            href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/page.html#%E9%A1%B5%E9%9D%A2%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0">页面事件处理函数</a></li>
+                                    <li class="chapter" data-level="1.2.3.3.4" data-path="./app-service/page.html" data-name="组件事件处理函数"><a
+                                            href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/page.html#%E7%BB%84%E4%BB%B6%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0">组件事件处理函数</a></li>
+                                    <li class="chapter" data-level="1.2.3.3.5" data-path="./app-service/page.html" data-name="route"><a
+                                            href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/page.html#pageprototyperoute">route</a></li>
+                                    <li class="chapter" data-level="1.2.3.3.6" data-path="./app-service/page.html" data-name="setData"><a
+                                            href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/page.html#pageprototypesetdataobject-data-function-callback">setData</a></li>
+                                    <li class="chapter" data-level="1.2.3.3.7" data-path="./app-service/page.html" data-name="页面生命周期"><a
+                                            href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/page.html#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">页面生命周期</a></li>
+                                </ul>
+                            </li>
+                            <li class="chapter" data-level="1.2.3.4" data-path="./app-service/route.html" data-name="路由"><a
+                                    href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/route.html">路由</a></li>
+                            <li class="chapter" data-level="1.2.3.5" data-path="./app-service/module.html" data-name="模块化"><a
+                                    href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/module.html">模块化</a></li>
+                            <li class="chapter" data-level="1.2.3.6" data-path="./app-service/api.html" data-name="API"><a
+                                    href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/api.html">API</a></li>
+                        </ul>
+                    </li>
+                    <li class="chapter close" data-level="1.2.4" data-path="./view/" data-name="视图层"><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/">视图层</a>
+                        <ul class="articles">
+                            <li class="chapter" data-level="1.2.4.1" data-path="./view/wxml/" data-name="WXML"><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/">WXML</a>
+                                <ul class="articles">
+                                    <li class="chapter" data-level="1.2.4.1.1" data-path="./view/wxml/data.html" data-name="数据绑定"><a
+                                            href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/data.html">数据绑定</a></li>
+                                    <li class="chapter" data-level="1.2.4.1.2" data-path="./view/wxml/list.html" data-name="列表渲染"><a
+                                            href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/list.html">列表渲染</a></li>
+                                    <li class="chapter" data-level="1.2.4.1.3" data-path="./view/wxml/conditional.html" data-name="条件渲染"><a
+                                            href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/conditional.html">条件渲染</a></li>
+                                    <li class="chapter" data-level="1.2.4.1.4" data-path="./view/wxml/template.html" data-name="模板"><a
+                                            href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/template.html">模板</a></li>
+                                    <li class="chapter" data-level="1.2.4.1.5" data-path="./view/wxml/event.html" data-name="事件"><a
+                                            href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/event.html">事件</a></li>
+                                    <li class="chapter" data-level="1.2.4.1.6" data-path="./view/wxml/import.html" data-name="引用"><a
+                                            href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/import.html">引用</a></li>
+                                </ul>
+                            </li>
+                            <li class="chapter" data-level="1.2.4.2" data-path="./view/wxs/" data-name="WXS"><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxs/">WXS</a>
+                                <ul class="articles">
+                                    <li class="chapter" data-level="1.2.4.2.1" data-path="./view/wxs/01wxs-module.html" data-name="模块"><a
+                                            href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxs/01wxs-module.html">模块</a></li>
+                                    <li class="chapter" data-level="1.2.4.2.2" data-path="./view/wxs/02variate.html" data-name="变量"><a
+                                            href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxs/02variate.html">变量</a></li>
+                                    <li class="chapter" data-level="1.2.4.2.3" data-path="./view/wxs/03annotation.html" data-name="注释"><a
+                                            href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxs/03annotation.html">注释</a></li>
+                                    <li class="chapter" data-level="1.2.4.2.4" data-path="./view/wxs/04operator.html" data-name="运算符"><a
+                                            href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxs/04operator.html">运算符</a></li>
+                                    <li class="chapter" data-level="1.2.4.2.5" data-path="./view/wxs/05statement.html" data-name="语句"><a
+                                            href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxs/05statement.html">语句</a></li>
+                                    <li class="chapter" data-level="1.2.4.2.6" data-path="./view/wxs/06datatype.html" data-name="数据类型"><a
+                                            href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxs/06datatype.html">数据类型</a></li>
+                                    <li class="chapter" data-level="1.2.4.2.7" data-path="./view/wxs/07basiclibrary.html" data-name="基础类库"><a
+                                            href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxs/07basiclibrary.html">基础类库</a></li>
+                                </ul>
+                            </li>
+                            <li class="chapter" data-level="1.2.4.3" data-path="./view/wxss.html" data-name="WXSS"><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxss.html">WXSS</a></li>
+                            <li class="chapter" data-level="1.2.4.4" data-path="./view/component.html" data-name="组件"><a
+                                    href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/component.html">组件</a></li>
+                        </ul>
+                    </li>
+                    <li class="chapter close" data-level="1.2.5" data-path="./custom-component/" data-name="自定义组件"><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/">自定义组件</a>
+                        <ul class="articles">
+                            <li class="chapter" data-level="1.2.5.1" data-path="./custom-component/wxml-wxss.html" data-name="组件模版和样式"><a
+                                    href="https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/wxml-wxss.html">组件模版和样式</a></li>
+                            <li class="chapter" data-level="1.2.5.2" data-path="./custom-component/component.html" data-name="Component构造器"><a
+                                    href="https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/component.html">Component构造器</a></li>
+                            <li class="chapter" data-level="1.2.5.3" data-path="./custom-component/events.html" data-name="组件事件"><a
+                                    href="https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/events.html">组件事件</a></li>
+                            <li class="chapter" data-level="1.2.5.4" data-path="./custom-component/behaviors.html" data-name="behaviors"><a
+                                    href="https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/behaviors.html">behaviors</a></li>
+                            <li class="chapter" data-level="1.2.5.5" data-path="./custom-component/relations.html" data-name="组件间关系"><a
+                                    href="https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/relations.html">组件间关系</a></li>
+                            <li class="chapter" data-level="1.2.5.6" data-path="./custom-component/generics.html" data-name="抽象节点"><a
+                                    href="https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/generics.html">抽象节点</a></li>
+                            <li class="chapter" data-level="1.2.5.7" data-path="./custom-component/extend.html" data-name="自定义组件扩展"><a
+                                    href="https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/extend.html">自定义组件扩展</a></li>
+                        </ul>
+                    </li>
+                    <li class="chapter open" data-level="1.2.6" data-path="./plugin/" data-name="插件"><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/plugin/">插件</a>
+                        <ul class="articles">
+                            <li class="chapter" data-level="1.2.6.1" data-path="./plugin/development.html" data-name="开发插件"><a
+                                    href="https://developers.weixin.qq.com/miniprogram/dev/framework/plugin/development.html">开发插件</a></li>
+                            <li class="chapter" data-level="1.2.6.2" data-path="./plugin/using.html" data-name="使用插件"><a
+                                    href="https://developers.weixin.qq.com/miniprogram/dev/framework/plugin/using.html">使用插件</a></li>
+                            <li class="chapter" data-level="1.2.6.3" data-path="./plugin/api-limit.html" data-name="插件的限制"><a
+                                    href="https://developers.weixin.qq.com/miniprogram/dev/framework/plugin/api-limit.html">插件的限制</a></li>
+                            <li class="chapter" data-level="1.2.6.4" data-path="./plugin/functional-pages.html" data-name="插件功能页"><a
+                                    href="https://developers.weixin.qq.com/miniprogram/dev/framework/plugin/functional-pages.html">插件功能页</a>
+                                <ul class="articles">
+                                    <li class="chapter" data-level="1.2.6.4.1" data-path="./plugin/functional-pages/user-info.html" data-name="用户信息功能页"><a
+                                            href="https://developers.weixin.qq.com/miniprogram/dev/framework/plugin/functional-pages/user-info.html">用户信息功能页</a></li>
+                                    <li class="chapter" data-level="1.2.6.4.2" data-path="./plugin/functional-pages/request-payment.html" data-name="支付功能页"><a
+                                            href="https://developers.weixin.qq.com/miniprogram/dev/framework/plugin/functional-pages/request-payment.html">支付功能页</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="chapter" data-level="1.2.7" data-path="./subpackages.html" data-name="分包加载"><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/subpackages.html">分包加载</a></li>
+                    <li class="chapter" data-level="1.2.8" data-path="./workers.html" data-name="多线程"><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/workers.html">多线程</a></li>
+                    <li class="chapter close" data-level="1.2.9" data-path="./client-lib/" data-name="基础库"><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/client-lib/">基础库</a>
+                        <ul class="articles">
+                            <li class="chapter" data-level="1.2.9.1" data-path="./client-lib/version.html" data-name="版本分布"><a
+                                    href="https://developers.weixin.qq.com/miniprogram/dev/framework/client-lib/version.html">版本分布</a></li>
+                            <li class="chapter" data-level="1.2.9.2" data-path="./client-lib/client.html" data-name="与客户端版本对应关系"><a
+                                    href="https://developers.weixin.qq.com/miniprogram/dev/framework/client-lib/client.html">与客户端版本对应关系</a></li>
+                        </ul>
+                    </li>
+                    <li class="chapter" data-level="1.2.10" data-path="./compatibility.html" data-name="兼容"><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/compatibility.html">兼容</a></li>
+                    <li class="chapter" data-level="1.2.11" data-path="./operating-mechanism.html" data-name="运行机制"><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/operating-mechanism.html">运行机制</a></li>
+                    <li class="chapter open" data-level="1.2.12" data-path="./performance/" data-name="性能"><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/performance/">性能</a>
+                        <ul class="articles">
+                            <li class="chapter" data-level="1.2.12.1" data-path="./performance/tips.html" data-name="优化建议"><a
+                                    href="https://developers.weixin.qq.com/miniprogram/dev/framework/performance/tips.html">优化建议</a></li>
+                            <li class="chapter" data-level="1.2.12.2" data-path="./performance/tools.html" data-name="分析工具"><a
+                                    href="https://developers.weixin.qq.com/miniprogram/dev/framework/performance/tools.html">分析工具</a></li>
+                        </ul>
+                    </li>
+                    <li class="chapter" data-level="1.2.13" data-path="./file-system.html" data-name="文件系统"><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/file-system.html">文件系统</a></li>
+                    <li class="chapter" data-level="1.2.14" data-path="./release.html" data-name="基础库更新日志"><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/release.html">基础库更新日志</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <li class="divider"></li>
+                </ul>
+
+
+            </nav>
+        </div>
+
+        <div class="book-body">
+            <div class="body-inner">
+                <div class="page-wrapper" tabindex="-1" role="main">
+                    <div class="page-inner">
+                        <div id="book-search-results">
+                            <div class="search-noresults">
+                                <section class="normal markdown-section">
+                                    <h1 id="全局配置">全局配置</h1>
+                                    <p><code>app.json</code>文件用来对微信小程序进行全局配置，决定页面文件的路径、窗口表现、设置网络超时时间、设置多 tab 等。</p>
+                                    <p>以下是一个包含了部分常用配置选项的 <code>app.json</code> ：</p>
+                                    <pre><code class="language-json">{
+  <span class="hljs-attr">"pages"</span>: [
+    <span class="hljs-string">"pages/index/index"</span>,
+    <span class="hljs-string">"pages/logs/index"</span>
+  ],
+  <span class="hljs-attr">"window"</span>: {
+    <span class="hljs-attr">"navigationBarTitleText"</span>: <span class="hljs-string">"Demo"</span>
+  },
+  <span class="hljs-attr">"tabBar"</span>: {
+    <span class="hljs-attr">"list"</span>: [{
+      <span class="hljs-attr">"pagePath"</span>: <span class="hljs-string">"pages/index/index"</span>,
+      <span class="hljs-attr">"text"</span>: <span class="hljs-string">"首页"</span>
+    }, {
+      <span class="hljs-attr">"pagePath"</span>: <span class="hljs-string">"pages/logs/logs"</span>,
+      <span class="hljs-attr">"text"</span>: <span class="hljs-string">"日志"</span>
+    }]
+  },
+  <span class="hljs-attr">"networkTimeout"</span>: {
+    <span class="hljs-attr">"request"</span>: <span class="hljs-number">10000</span>,
+    <span class="hljs-attr">"downloadFile"</span>: <span class="hljs-number">10000</span>
+  },
+  <span class="hljs-attr">"debug"</span>: <span class="hljs-literal">true</span>
+}
+</code></pre>
+                                    <h4 id="appjson-配置项列表">app.json 配置项列表</h4>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>属性</th>
+                                                <th>类型</th>
+                                                <th>必填</th>
+                                                <th>描述</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#pages">pages</a></td>
+                                                <td>String Array</td>
+                                                <td>是</td>
+                                                <td>页面路径列表</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#window">window</a></td>
+                                                <td>Object</td>
+                                                <td>否</td>
+                                                <td>全局的默认窗口表现</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#tabbar">tabBar</a></td>
+                                                <td>Object</td>
+                                                <td>否</td>
+                                                <td>底部 <code>tab</code> 栏的表现</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#networktimeout">networkTimeout</a></td>
+                                                <td>Object</td>
+                                                <td>否</td>
+                                                <td>网络超时时间</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#debug">debug</a></td>
+                                                <td>Boolean</td>
+                                                <td>否</td>
+                                                <td>是否开启 debug 模式，默认关闭</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#functionalpages">functionalPages</a></td>
+                                                <td>Boolean</td>
+                                                <td>否</td>
+                                                <td>是否启用插件功能页，默认关闭</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#subpackages">subPackages</a></td>
+                                                <td>Object Array</td>
+                                                <td>否</td>
+                                                <td>分包结构配置</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#workers">workers</a></td>
+                                                <td>String</td>
+                                                <td>否</td>
+                                                <td><code>Worker</code> 代码放置的目录</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#requiredbackgroundmodes">requiredBackgroundModes</a></td>
+                                                <td>Array</td>
+                                                <td>否</td>
+                                                <td>需要在后台使用的能力，如“音乐播放”</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <h4 id="pages">pages</h4>
+                                    <p>用于指定小程序由哪些页面组成，每一项都对应一个页面的 路径+文件名 信息。文件名不需要写文件后缀，框架会自动去寻找对于位置的 <code>.json</code>,
+                                        <code>.js</code>, <code>.wxml</code>, <code>.wxss</code> 四个文件进行处理。</p>
+                                    <p><strong>数组的第一项代表小程序的初始页面（首页）。小程序中新增/减少页面，都需要对 pages 数组进行修改。</strong></p>
+                                    <p>如开发目录为：</p>
+                                    <pre><code>├── app.js
+├── app.json
+├── app.wxss
+├── pages
+│&nbsp;&nbsp; │── index
+│&nbsp;&nbsp; │   ├── index.wxml
+│&nbsp;&nbsp; │   ├── index.js
+│&nbsp;&nbsp; │   ├── index.json
+│&nbsp;&nbsp; │   └── index.wxss
+│&nbsp;&nbsp; └── logs
+│&nbsp;&nbsp;     ├── log.wxml
+│&nbsp;&nbsp;     └── log.js
+└── utils
+</code></pre>
+                                    <p>则需要在 app.json 中写</p>
+                                    <pre><code class="language-json">{
+  <span class="hljs-attr">"pages"</span>:[
+    <span class="hljs-string">"pages/index/index"</span>,
+    <span class="hljs-string">"pages/logs/logs"</span>
+  ]
+}
+</code></pre>
+                                    <h3 id="window">window</h3>
+                                    <p>用于设置小程序的状态栏、导航条、标题、窗口背景色。</p>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>属性</th>
+                                                <th>类型</th>
+                                                <th>默认值</th>
+                                                <th>描述</th>
+                                                <th>最低版本</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>navigationBarBackgroundColor</td>
+                                                <td>HexColor</td>
+                                                <td>#000000</td>
+                                                <td>导航栏背景颜色，如 <code>#000000</code></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>navigationBarTextStyle</td>
+                                                <td>String</td>
+                                                <td>white</td>
+                                                <td>导航栏标题颜色，仅支持 <code>black</code> / <code>white</code></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>navigationBarTitleText</td>
+                                                <td>String</td>
+                                                <td></td>
+                                                <td>导航栏标题文字内容</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>navigationStyle</td>
+                                                <td>String</td>
+                                                <td>default</td>
+                                                <td>导航栏样式，仅支持以下值：<br><code>default</code> 默认样式<br> <code>custom</code> 自定义导航栏，只保留右上角胶囊按钮</td>
+                                                <td>微信版本 6.6.0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>backgroundColor</td>
+                                                <td>HexColor</td>
+                                                <td>#ffffff</td>
+                                                <td>窗口的背景色</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>backgroundTextStyle</td>
+                                                <td>String</td>
+                                                <td>dark</td>
+                                                <td>下拉 loading 的样式，仅支持 <code>dark</code> / <code>light</code></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>backgroundColorTop</td>
+                                                <td>String</td>
+                                                <td>#ffffff</td>
+                                                <td>顶部窗口的背景色，仅 iOS 支持</td>
+                                                <td>微信版本 6.5.16</td>
+                                            </tr>
+                                            <tr>
+                                                <td>backgroundColorBottom</td>
+                                                <td>String</td>
+                                                <td>#ffffff</td>
+                                                <td>底部窗口的背景色，仅 iOS 支持</td>
+                                                <td>微信版本 6.5.16</td>
+                                            </tr>
+                                            <tr>
+                                                <td>enablePullDownRefresh</td>
+                                                <td>Boolean</td>
+                                                <td>false</td>
+                                                <td>是否全局开启下拉刷新。<br>详见 <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/page.html#onpulldownrefresh">Page.onPullDownRefresh</a></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>onReachBottomDistance</td>
+                                                <td>Number</td>
+                                                <td>50</td>
+                                                <td>页面上拉触底事件触发时距页面底部距离，单位为px。<br>详见 <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/page.html#onreachbottom">Page.onReachButom</a></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <p><strong>注：HexColor（十六进制颜色值），如"#ff00ff"</strong></p>
+                                    <p><strong>注：<code>navigationStyle</code> 只在 <code>app.json</code> 中生效。开启 custom 后，低版本客户端需要做好兼容。开发者工具基础库版本切到
+                                            1.7.0（不代表最低版本，只供调试用）可方便切到旧视觉
+                                        </strong></p>
+                                    <p><strong>注：客户端 6.7.2 版本开始，<code>navigationStyle: custom</code> 对 <code>&lt;web-view&gt;</code>                                            组件无效</strong></p>
+                                    <p>如 app.json ：</p>
+                                    <pre><code class="language-json">{
+  <span class="hljs-attr">"window"</span>:{
+    <span class="hljs-attr">"navigationBarBackgroundColor"</span>: <span class="hljs-string">"#ffffff"</span>,
+    <span class="hljs-attr">"navigationBarTextStyle"</span>: <span class="hljs-string">"black"</span>,
+    <span class="hljs-attr">"navigationBarTitleText"</span>: <span class="hljs-string">"微信接口功能演示"</span>,
+    <span class="hljs-attr">"backgroundColor"</span>: <span class="hljs-string">"#eeeeee"</span>,
+    <span class="hljs-attr">"backgroundTextStyle"</span>: <span class="hljs-string">"light"</span>
+  }
+}
+</code></pre>
+                                    <p><img src="./框架 · 小程序_files/config.jpg" alt="" style="width:600px"></p>
+                                    <h3 id="tabbar">tabBar</h3>
+                                    <p>如果小程序是一个多 tab 应用（客户端窗口的底部或顶部有 tab 栏可以切换页面），可以通过 tabBar 配置项指定 tab 栏的表现，以及 tab 切换时显示的对应页面。</p>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>属性</th>
+                                                <th>类型</th>
+                                                <th>必填</th>
+                                                <th>默认值</th>
+                                                <th>描述</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>color</td>
+                                                <td>HexColor</td>
+                                                <td>是</td>
+                                                <td></td>
+                                                <td>tab 上的文字默认颜色</td>
+                                            </tr>
+                                            <tr>
+                                                <td>selectedColor</td>
+                                                <td>HexColor</td>
+                                                <td>是</td>
+                                                <td></td>
+                                                <td>tab 上的文字选中时的颜色</td>
+                                            </tr>
+                                            <tr>
+                                                <td>backgroundColor</td>
+                                                <td>HexColor</td>
+                                                <td>是</td>
+                                                <td></td>
+                                                <td>tab 的背景色</td>
+                                            </tr>
+                                            <tr>
+                                                <td>borderStyle</td>
+                                                <td>String</td>
+                                                <td>否</td>
+                                                <td>black</td>
+                                                <td>tabbar上边框的颜色， 仅支持 <code>black</code> / <code>white</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>list</td>
+                                                <td>Array</td>
+                                                <td>是</td>
+                                                <td></td>
+                                                <td>tab 的列表，详见 <code>list</code> 属性说明，最少2个、最多5个 tab</td>
+                                            </tr>
+                                            <tr>
+                                                <td>position</td>
+                                                <td>String</td>
+                                                <td>否</td>
+                                                <td>bottom</td>
+                                                <td>tabBar的位置，仅支持 <code>bottom</code> / <code>top</code></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <p>其中 list 接受一个数组，<strong>只能配置最少2个、最多5个 tab</strong>。tab 按数组的顺序排序，每个项都是一个对象，其属性值如下：</p>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>属性</th>
+                                                <th>类型</th>
+                                                <th>必填</th>
+                                                <th>说明</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>pagePath</td>
+                                                <td>String</td>
+                                                <td>是</td>
+                                                <td>页面路径，必须在 pages 中先定义</td>
+                                            </tr>
+                                            <tr>
+                                                <td>text</td>
+                                                <td>String</td>
+                                                <td>是</td>
+                                                <td>tab 上按钮文字</td>
+                                            </tr>
+                                            <tr>
+                                                <td>iconPath</td>
+                                                <td>String</td>
+                                                <td>否</td>
+                                                <td>图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px，不支持网络图片。<br><strong>当 <code>postion</code>                                                        为
+                                                        <code>top</code> 时，不显示 icon。</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td>selectedIconPath</td>
+                                                <td>String</td>
+                                                <td>否</td>
+                                                <td>选中时的图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px，不支持网络图片。<br><strong>当 <code>postion</code>                                                        为
+                                                        <code>top</code> 时，不显示 icon。</strong></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <p><img src="./框架 · 小程序_files/tabbar.png" alt=""></p>
+                                    <h3 id="networktimeout">networkTimeout</h3>
+                                    <p>各类网络请求的超时时间，单位均为毫秒。</p>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>属性</th>
+                                                <th>类型</th>
+                                                <th>必填</th>
+                                                <th>默认值</th>
+                                                <th>说明</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>request</td>
+                                                <td>Number</td>
+                                                <td>否</td>
+                                                <td>60000</td>
+                                                <td><a href="https://developers.weixin.qq.com/miniprogram/dev/api/network-request.html">wx.request</a>
+                                                    的超时时间，单位毫秒。</td>
+                                            </tr>
+                                            <tr>
+                                                <td>connectSocket</td>
+                                                <td>Number</td>
+                                                <td>否</td>
+                                                <td>60000</td>
+                                                <td><a href="https://developers.weixin.qq.com/miniprogram/dev/api/network-socket.html">wx.connectSocket</a>
+                                                    的超时时间，单位毫秒。</td>
+                                            </tr>
+                                            <tr>
+                                                <td>uploadFile</td>
+                                                <td>Number</td>
+                                                <td>否</td>
+                                                <td>60000</td>
+                                                <td><a href="https://developers.weixin.qq.com/miniprogram/dev/api/network-file.html#wxuploadfileobject">wx.uploadFile</a>
+                                                    的超时时间，单位毫秒。</td>
+                                            </tr>
+                                            <tr>
+                                                <td>downloadFile</td>
+                                                <td>Number</td>
+                                                <td>否</td>
+                                                <td>60000</td>
+                                                <td><a href="https://developers.weixin.qq.com/miniprogram/dev/api/network-file.html#wxdownloadfileobject">wx.downloadFile</a>
+                                                    的超时时间，单位毫秒。</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <h3 id="debug">debug</h3>
+                                    <p>可以在开发者工具中开启 <code>debug</code> 模式，在开发者工具的控制台面板，调试信息以 <code>info</code> 的形式给出，其信息有Page的注册，页面路由，数据更新，事件触发等。可以帮助开发者快速定位一些常见的问题。</p>
+                                    <h3 id="functionalpages">functionalPages</h3>
+                                    <blockquote>
+                                        <p>基础库 2.1.0 开始支持，低版本需做<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/compatibility.html">兼容处理</a></p>
+                                    </blockquote>
+                                    <p>启用<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/plugin/functional-pages.html">插件功能页</a>时，插件所有者小程序需要设置其
+                                        <code>functionalPages</code> 为 <code>true</code>。</p>
+                                    <h3 id="subpackages">subPackages</h3>
+                                    <blockquote>
+                                        <p>微信客户端 6.6.0 ，基础库 1.7.3 及以上版本支持</p>
+                                    </blockquote>
+                                    <p>启用<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/subpackages.html">分包加载</a>时，声明项目分包结构。</p>
+                                    <h3 id="workers">workers</h3>
+                                    <blockquote>
+                                        <p>基础库 1.9.90 开始支持，低版本需做<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/compatibility.html">兼容处理</a></p>
+                                    </blockquote>
+                                    <p>使用 <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/workers.html">Worker</a>
+                                        处理多线程任务时，设置 <code>Worker</code> 代码放置的目录</p>
+                                    <h3 id="requiredbackgroundmodes">requiredBackgroundModes</h3>
+                                    <blockquote>
+                                        <p>微信客户端 6.7.2 及以上版本支持</p>
+                                    </blockquote>
+                                    <p>申明需要后台运行的能力，类型为数组。目前支持以下项目：</p>
+                                    <ul>
+                                        <li><code>audio</code>: 后台音乐播放</li>
+                                    </ul>
+                                    <p>如：</p>
+                                    <pre><code class="language-json">{
+  <span class="hljs-attr">"pages"</span>: [<span class="hljs-string">"pages/index/index"</span>],
+  <span class="hljs-attr">"requiredBackgroundModes"</span>: [<span class="hljs-string">"audio"</span>]
+}
+</code></pre>
+                                    <p>注：在此处申明了后台运行的接口，开发版和体验版上可以直接生效，正式版还需通过审核。</p>
+                                    <h1 id="页面配置">页面配置</h1>
+                                    <p>每一个小程序页面也可以使用<code>.json</code>文件来对本页面的窗口表现进行配置。</p>
+                                    <p>页面的配置只能设置 <code>app.json</code> 中部分 <code>window</code> 配置项的内容，页面中配置项会覆盖 <code>app.json</code>                                        的
+                                        <code>window</code> 中相同的配置项。</p>
+                                    <h4 id="页面配置项列表">页面配置项列表</h4>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>属性</th>
+                                                <th>类型</th>
+                                                <th>默认值</th>
+                                                <th>描述</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>navigationBarBackgroundColor</td>
+                                                <td>HexColor</td>
+                                                <td>#000000</td>
+                                                <td>导航栏背景颜色，如 <code>#000000</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>navigationBarTextStyle</td>
+                                                <td>String</td>
+                                                <td>white</td>
+                                                <td>导航栏标题颜色，仅支持 <code>black</code> / <code>white</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>navigationBarTitleText</td>
+                                                <td>String</td>
+                                                <td></td>
+                                                <td>导航栏标题文字内容</td>
+                                            </tr>
+                                            <tr>
+                                                <td>backgroundColor</td>
+                                                <td>HexColor</td>
+                                                <td>#ffffff</td>
+                                                <td>窗口的背景色</td>
+                                            </tr>
+                                            <tr>
+                                                <td>backgroundTextStyle</td>
+                                                <td>String</td>
+                                                <td>dark</td>
+                                                <td>下拉 loading 的样式，仅支持 <code>dark</code> / <code>light</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>enablePullDownRefresh</td>
+                                                <td>Boolean</td>
+                                                <td>false</td>
+                                                <td>是否全局开启下拉刷新。<br>详见 <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/page.html#onpulldownrefresh">Page.onPullDownRefresh</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>onReachBottomDistance</td>
+                                                <td>Number</td>
+                                                <td>50</td>
+                                                <td>页面上拉触底事件触发时距页面底部距离，单位为px。<br>详见 <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/page.html#onreachbottom">Page.onReachButom</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>disableScroll</td>
+                                                <td>Boolean</td>
+                                                <td>false</td>
+                                                <td>设置为 <code>true</code> 则页面整体不能上下滚动；只在页面配置中有效，无法在 <code>app.json</code>                                                    中设置该项</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <pre><code class="language-json">{
+  <span class="hljs-attr">"navigationBarBackgroundColor"</span>: <span class="hljs-string">"#ffffff"</span>,
+  <span class="hljs-attr">"navigationBarTextStyle"</span>: <span class="hljs-string">"black"</span>,
+  <span class="hljs-attr">"navigationBarTitleText"</span>: <span class="hljs-string">"微信接口功能演示"</span>,
+  <span class="hljs-attr">"backgroundColor"</span>: <span class="hljs-string">"#eeeeee"</span>,
+  <span class="hljs-attr">"backgroundTextStyle"</span>: <span class="hljs-string">"light"</span>
+}
+</code></pre>
+                                    <blockquote>
+                                        <p>页面的<code>.json</code>只能设置 <code>window</code> 相关的配置项，以决定本页面的窗口表现，所以无需写 <code>window</code>                                            这个键。</p>
+                                    </blockquote>
+
+                                </section>
+                            </div>
+                            <div class="search-results">
+                                <div class="has-results">
+                                    <h1 class="search-results-title">
+                                        <span class="search-results-count"></span> 个结果 "<span class="search-query"></span>"
+                                    </h1>
+                                    <ul class="search-results-list"></ul>
+                                </div>
+                                <div class="no-results">
+                                    <h1 class="search-results-title">
+                                        没有找到相关内容 "<span class="search-query"></span>"
+                                    </h1>
+                                    <h1 class="search-results-title js_errmsg" style="display: none"></h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="foot" id="footer">
+                    <ul class="links ft">
+                        <li class="links_item"><a href="https://www.tencent.com/zh-cn/index.html" target="_blank">关于腾讯</a></li>
+                        <li class="links_item"><a href="https://developers.weixin.qq.com/miniprogram/introduction/index.html?t=1484641676"
+                                target="_blank">文档中心</a></li>
+                        <li class="links_item"><a href="https://mp.weixin.qq.com/cgi-bin/opshowpage?action=dispelinfo&amp;lang=zh_CN&amp;begin=1&amp;count=9"
+                                target="_blank">辟谣中心</a></li>
+                        <li class="links_item"><a href="https://kf.qq.com/product/wx_xcx.html" target="_blank">客服中心</a></li>
+                        <li class="links_item"><a href="mailto:weixinmp@qq.com" target="_blank">联系邮箱</a></li>
+                        <li class="links_item">
+                            <p class="copyright">Copyright © 2012-<span id="s_copyright_year">2018</span> Tencent. All Rights
+                                Reserved.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+            <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/structure.html" class="navigation navigation-prev " aria-label="上一页: 目录结构">
+                <i class="fa fa-angle-left"></i>
+            </a>
+
+
+            <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/" class="navigation navigation-next " aria-label="下一页: 逻辑层"
+                style="margin-right: 6px;">
+                <i class="fa fa-angle-right"></i>
+            </a>
+
+
+
+        </div>
+
+        <script>
+            var dom = document.getElementById('js_selected_dev')
+            if (dom) dom.classList.add('selected')
+        </script>
+
+    </div>
+
+    <script src="./框架 · 小程序_files/gitbook.js.下载"></script>
+    <script src="./框架 · 小程序_files/theme.js.下载"></script>
+    <script src="./框架 · 小程序_files/search.js.下载"></script>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function () {
+            gitbook.page.hasChanged();
+        });
+    </script>
+
+
+    <audio controls="controls" style="display: none;"></audio></body>
+<style type="text/css">
+    #yddContainer {
+        display: block;
+        font-family: Microsoft YaHei;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        top: -4px;
+        left: -4px;
+        font-size: 12px;
+        border: 1px solid
+    }
+
+    #yddTop {
+        display: block;
+        height: 22px
+    }
+
+    #yddTopBorderlr {
+        display: block;
+        position: static;
+        height: 17px;
+        padding: 2px 28px;
+        line-height: 17px;
+        font-size: 12px;
+        color: #5079bb;
+        font-weight: bold;
+        border-style: none solid;
+        border-width: 1px
+    }
+
+    #yddTopBorderlr .ydd-sp {
+        position: absolute;
+        top: 2px;
+        height: 0;
+        overflow: hidden
+    }
+
+    .ydd-icon {
+        left: 5px;
+        width: 17px;
+        padding: 0px 0px 0px 0px;
+        padding-top: 17px;
+        background-position: -16px -44px
+    }
+
+    .ydd-close {
+        right: 5px;
+        width: 16px;
+        padding-top: 16px;
+        background-position: left -44px
+    }
+
+    #yddKeyTitle {
+        float: left;
+        text-decoration: none
+    }
+
+    #yddMiddle {
+        display: block;
+        margin-bottom: 10px
+    }
+
+    .ydd-tabs {
+        display: block;
+        margin: 5px 0;
+        padding: 0 5px;
+        height: 18px;
+        border-bottom: 1px solid
+    }
+
+    .ydd-tab {
+        display: block;
+        float: left;
+        height: 18px;
+        margin: 0 5px -1px 0;
+        padding: 0 4px;
+        line-height: 18px;
+        border: 1px solid;
+        border-bottom: none
+    }
+
+    .ydd-trans-container {
+        display: block;
+        line-height: 160%
+    }
+
+    .ydd-trans-container a {
+        text-decoration: none;
+    }
+
+    #yddBottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 22px;
+        line-height: 22px;
+        overflow: hidden;
+        background-position: left -22px
+    }
+
+    .ydd-padding010 {
+        padding: 0 10px
+    }
+
+    #yddWrapper {
+        color: #252525;
+        z-index: 10001;
+        background: url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ab20.png);
+    }
+
+    #yddContainer {
+        background: #fff;
+        border-color: #4b7598
+    }
+
+    #yddTopBorderlr {
+        border-color: #f0f8fc
+    }
+
+    #yddWrapper .ydd-sp {
+        background-image: url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ydd-sprite.png)
+    }
+
+    #yddWrapper a,
+    #yddWrapper a:hover,
+    #yddWrapper a:visited {
+        color: #50799b
+    }
+
+    #yddWrapper .ydd-tabs {
+        color: #959595
+    }
+
+    .ydd-tabs,
+    .ydd-tab {
+        background: #fff;
+        border-color: #d5e7f3
+    }
+
+    #yddBottom {
+        color: #363636
+    }
+
+    #yddWrapper {
+        min-width: 250px;
+        max-width: 400px;
+    }
+</style>
+
+</html>
