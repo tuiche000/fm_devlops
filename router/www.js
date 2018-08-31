@@ -6,9 +6,12 @@ router.get('/', async (ctx, next) => {
   let curInfo = ['']
   if (ctx.query.infoId) {
     let infoId = ctx.query.infoId
-    curInfo = await ctx.db.query(`SELECT id,title,category_id,content,submit_time FROM informations WHERE id='${infoId}'`)
+    curInfo = await ctx.db.query(`SELECT id,title,category_id,category_name,content,api_import,api_export,submit_time FROM informations WHERE id='${infoId}'`)
+    if (curInfo.length == 0) {
+      ctx.redirect('/')
+      return
+    }
   }
-  console.log(curInfo)
 
   let categories = await ctx.db.query(`SELECT * FROM categories WHERE pid=${1} ORDER BY rank`)
   let categories2 = await ctx.db.query(`SELECT * FROM categories WHERE pid=${2} ORDER BY rank`)

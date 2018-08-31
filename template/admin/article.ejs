@@ -7,37 +7,137 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
+<!-- 新 Bootstrap4 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- popper.min.js 用于弹窗、提示、下拉菜单 -->
+<script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+
+<!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<!-- tinymce -->
+<script src="/tinymce/tinymce.min.js"></script>
+<script>
+  tinymce.init({
+    selector: '#tinymce_import',  // change this value according to your HTML
+    language: "zh_CN",
+  });
+  tinymce.init({
+    selector: '#tinymce_export',  // change this value according to your HTML
+    language: "zh_CN",
+  });
+</script>
 <style>
   body {
     text-align: center;
-    padding-top: 200px;
+    padding: 100px 0;
+  }
+
+  form {
+    margin: 0 auto;
+  }
+
+  textarea {
+    background: beige;
   }
 </style>
 
 <body>
-  <form action="" method="POST">
-    标题:<br>
-    <input type="text" name="title" value="小程序官方api">
+  <div class="container">
 
-    <br> 所属分类:<br>
-    <input type="text" name="category_id" value="">
+    <div class="table">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>标题</th>
+            <th>分类</th>
+            <th>发布时间</th>
+            <th>管理</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% informations.forEach(item => { %>
+            <tr>
+              <td>
+                <%= item.title %>
+              </td>
+              <td>
+                <%
+                let unixTimestamp = new Date(item.submit_time * 1000) 
+                let new_submit_time = unixTimestamp.toLocaleString() 
+                %>
+                  <%= item.category_name %>
+              </td>
+              <td>
+                <%= new_submit_time %>
+              </td>
+              <td>
+                <a class="btn btn-sm btn-outline-warning" href="/admin/article/edit?id=<%= item.id %>">修改</a>
+                <a class="btn btn-sm btn-outline-danger" href="/admin/article/del?id=<%= item.id %>" onclick="return confirm('你确定删除吗？删除不可撤销')">删除</a>
+              </td>
+            </tr>
+            <% }) %>
+        </tbody>
+      </table>
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item active"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </div>
 
-    <br> 内容<br>
-    <textarea name="content" style="width:80%" rows="30">
-    </textarea>
+    <h2>文章添加</h2>
+    <form action="" method="POST">
 
-    <!-- <br> 是否显示导航<br>
-    <input type="radio" name="is_hide" value="1" checked>是
-    <input type="radio" name="is_hide" value="0">否
+      <div class="form-group">
+        <label for="title">标题:</label>
+        <input type="text" name="title" value="" class="form-control" id="title">
+      </div>
 
-    <br> 是否显示内容<br>
-    <input type="radio" name="is_display" value="1" checked>是
-    <input type="radio" name="is_display" value="0">否 -->
+      <div class="form-group">
+        <label for="category">所属分类:</label>
+        <select class="form-control" name="category" id="category">
+          <% categories2.forEach(item => { %>
+            <option value="<%= JSON.stringify({id:item.id, name: item.name}) %>">
+              <%= item.name %>
+            </option>
+            <% }) %>
+        </select>
+      </div>
 
-    <br>
-    <input type="submit" value="提交">
-    <br><br>
-  </form>
+      <div class="form-group">
+        <label for="address">接口地址:</label>
+        <div class="input-group mt-3 mb-3">
+          <div class="input-group-prepend">
+            <select class="form-control" name="method" id="method">
+              <option value="GET">GET</option>
+              <option value="GET">POST</option>
+            </select>
+          </div>
+          <input type="text" class="form-control" name="api" placeholder="网站地址">
+        </div>
+        <!-- <input type="text" name="address" value="" class="form-control" id="address"> -->
+      </div>
+
+      <div class="form-group">
+        <label for="import">入参示例:</label>
+      </div>
+      <textarea id="tinymce_import" name="api_import"></textarea>
+
+      <div class="form-group">
+        <label for="export">出参示例:</label>
+      </div>
+      <textarea id="tinymce_export" name="api_export"></textarea>
+
+
+      <button type="submit" class="btn btn-primary">提交</button>
+    </form>
+
 </body>
 
 </html>

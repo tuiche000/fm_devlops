@@ -14,7 +14,7 @@
 
 
 
-      <li class="chapter active open" data-level="1.1.1" data-path="." data-name="基础"><a href="https://developers.weixin.qq.com/miniprogram/dev/">基础</a>
+      <li class="chapter active open"><a href="https://developers.weixin.qq.com/miniprogram/dev/">基础</a>
         <ul class="articles">
           <!-- <% categories2.forEach(item => { %>
             <li class="chapter active"><a href="https://developers.weixin.qq.com/miniprogram/dev/"><%= item.name %></a>
@@ -25,11 +25,17 @@
             </li>
             <% }) %> -->
           <% categories2.forEach(item => { %>
-            <li class="chapter active" data-name="起步"><a href=""><%= item.name %></a>
+            <li class="chapter"><a href=""><%= item.name %></a>
               <ul class="articles">
                 <% info.forEach(item2 => { %>
                 <% if (item2.category_id == item.id) { %>
-                  <li class="chapter"><a href="?infoId=<%= item2.id %>"><%= item2.title %></a></li>
+
+                  <% if (curInfo.id == item2.id) { %>
+                  <li class="chapter active"><a href="?infoId=<%= item2.id %>"><%= item2.title %></a></li>
+                  <% } else { %>
+                  <li class="chapter"><a href="?infoId=<%= item2.id %>"><%= item2.title %></a></li>  
+                  <% } %>
+
                 <% } %>
                 <% }) %>
               </ul>
