@@ -1,7 +1,35 @@
-const Router = require('koa-router');
+const Router = require('koa-router')
 
-let router = new Router();
+let router = new Router()
 
+//进入所有的admin相关的页面之前(除了"/admin/login")，都要校验用户身份——如果没登录过，滚去登陆(/admin/login)
+router.use(async (ctx, next) => {
+  // console.log(ctx.cookies)
+  console.log(ctx.req.url)
+  console.log(ctx.request)
+  // if (ctx.path != '/login') {
+  //   await ctx.redirect(`/admin/login?ref=${ctx.url}`)
+  // }
+  // if (!req.cookies['admin_token'] && req.path != '/login') {
+  //   res.redirect(`/admin/login?ref=${req.url}`)
+  // } else {
+  //   if (req.path == '/login') {
+  //     next()
+  //   } else {
+  //     req.db.query(`SELECT * FROM admin_token_table WHERE ID='${req.cookies['admin_token']}'`, (err, data) => {
+  //       if (err) {
+  //         console.log(err)
+  //         res.sendStatus(500)
+  //       } else if (data.length == 0) {
+  //         res.redirect(`/admin/login?ref=${req.url}`)
+  //       } else {
+  //         req.admin_ID = data[0]['admin_ID']
+  //         next()
+  //       }
+  //     })
+  //   }
+  // }
+})
 router.get('/', async ctx => {
   let categories = await ctx.db.query(`SELECT * FROM categories ORDER BY \`pid\`,\`rank\``)
   await ctx.render('./admin/nav', {
@@ -124,4 +152,4 @@ router.post('/article/edit', async ctx => {
   }
 })
 
-module.exports = router.routes();
+module.exports = router.routes()
