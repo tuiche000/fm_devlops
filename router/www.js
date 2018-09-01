@@ -12,9 +12,8 @@ router.get('/', async (ctx, next) => {
       return
     }
   }
-
-  let categories = await ctx.db.query(`SELECT * FROM categories WHERE pid=${1} ORDER BY rank`)
-  let categories2 = await ctx.db.query(`SELECT * FROM categories WHERE pid=${2} ORDER BY rank`)
+  let categories = await ctx.db.query(`SELECT * FROM \`categories\` WHERE \`pid\`=${1} ORDER BY \`rank\``)
+  let categories2 = await ctx.db.query(`SELECT * FROM categories WHERE pid=${2} ORDER BY \`rank\``)
   let info = await ctx.db.query(`SELECT * FROM informations`)
 
   await ctx.render('./www/index', {

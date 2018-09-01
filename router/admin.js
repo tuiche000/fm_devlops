@@ -3,7 +3,7 @@ const Router = require('koa-router');
 let router = new Router();
 
 router.get('/', async ctx => {
-  let categories = await ctx.db.query(`SELECT * FROM categories ORDER BY pid,rank`)
+  let categories = await ctx.db.query(`SELECT * FROM categories ORDER BY \`pid\`,\`rank\``)
   await ctx.render('./admin/nav', {
     categories
   })
@@ -20,7 +20,7 @@ router.get('/del', async ctx => {
 })
 router.get('/article', async ctx => {
   let informations = await ctx.db.query(`SELECT * FROM informations ORDER BY submit_time`)
-  let categories2 = await ctx.db.query(`SELECT * FROM categories WHERE pid=${2} ORDER BY rank`)
+  let categories2 = await ctx.db.query(`SELECT * FROM categories WHERE pid=${2} ORDER BY \`rank\``)
   await ctx.render('./admin/article', {
     categories2,
     informations
@@ -36,7 +36,7 @@ router.get('/article/del', async ctx => {
 router.get('/article/edit', async ctx => {
   let id = ctx.query.id
   const row = await ctx.db.query(`SELECT id,title,category_id,category_name,content,api_import,api_export,submit_time FROM informations WHERE id='${id}'`)
-  let categories2 = await ctx.db.query(`SELECT * FROM categories WHERE pid=${2} ORDER BY rank`)
+  let categories2 = await ctx.db.query(`SELECT * FROM categories WHERE pid=${2} ORDER BY \`rank\``)
   await ctx.render('/admin/article_edit', {
     body: row[0],
     categories2

@@ -21,7 +21,18 @@ ejs(app, {
   // debug: true
 });
 
+async function onerror(ctx, next) {
+  try {
+    await next();
+  } catch (err) {
+    ctx.app.emit('error', err);
+    ctx.body = 'server error';
+    ctx.status = err.status || 500;
+  }
+}
+
 app.use(async (ctx, next) => {
+  await onerror()
   ctx.db = db
   ctx.utils = utils
   await next()
