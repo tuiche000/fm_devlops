@@ -97,6 +97,19 @@ router.post('/', async ctx => {
     ctx.body = '请填写所有的表单字段'
   }
 })
+router.post('/login', async ctx => {
+  let { user, pwd } = ctx.request.fields
+  let row = await ctx.db.query(`SELECT id,user_name,password FROM users WHERE user_name='${user}'`)
+  if (row.length == 0) {
+    console.log('没有这个用户，或密码错误')
+    return
+  }
+  if (row[0].password == pwd) {
+    console.log('登陆OK') 
+    return
+  }
+  console.log('用户名或密码错误') 
+})
 router.post('/article', async ctx => {
   let { title, category, method, api, api_import, api_export } = ctx.request.fields
   // 分类转换成对象
