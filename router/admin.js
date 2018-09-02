@@ -4,12 +4,11 @@ let router = new Router()
 
 //进入所有的admin相关的页面之前(除了"/admin/login")，都要校验用户身份——如果没登录过，滚去登陆(/admin/login)
 router.use(async (ctx, next) => {
-  // console.log(ctx.cookies)
-  console.log(ctx.req.url)
-  console.log(ctx.request)
-  // if (ctx.path != '/login') {
-  //   await ctx.redirect(`/admin/login?ref=${ctx.url}`)
-  // }
+  if (ctx.path != '/admin/login') {
+    await ctx.redirect(`/admin/login?ref=${ctx.url}`)
+    return
+  }
+  await next()
   // if (!req.cookies['admin_token'] && req.path != '/login') {
   //   res.redirect(`/admin/login?ref=${req.url}`)
   // } else {
@@ -34,6 +33,12 @@ router.get('/', async ctx => {
   let categories = await ctx.db.query(`SELECT * FROM categories ORDER BY \`pid\`,\`rank\``)
   await ctx.render('./admin/nav', {
     categories
+  })
+})
+router.get('/login', async ctx => {
+  let source_path = ctx.query.ref
+  await ctx.render('./admin/login', {
+    source_path
   })
 })
 router.get('/del', async ctx => {
@@ -70,6 +75,7 @@ router.get('/article/edit', async ctx => {
     categories2
   })
 })
+
 
 router.post('/', async ctx => {
   let { name, pid, rank, is_hide, is_display } = ctx.request.fields
