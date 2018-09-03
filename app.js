@@ -17,7 +17,8 @@ app.use(async (ctx, next) => {
 })
 
 app.use(static('./static'))
-app.use(convert(body()))
+app.use(convert(body({
+})))
 
 ejs(app, {
   root: './template',
