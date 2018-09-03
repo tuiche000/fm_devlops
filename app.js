@@ -9,6 +9,7 @@ const utils = require('./libs/utils')
 
 const app = new Koa()
 app.listen(8080)
+app.keys = ['im a newer secret', 'i like turtle']
 
 app.use(async (ctx, next) => {
   ctx.db = db
@@ -17,8 +18,12 @@ app.use(async (ctx, next) => {
 })
 
 app.use(static('./static'))
-app.use(convert(body({
-})))
+app.use(convert(body(
+  {
+    textLimit: '2048kb',
+    formLimit: '2048kb',
+  }
+)))
 
 ejs(app, {
   root: './template',

@@ -5,7 +5,7 @@ let db=mysql.createPool({
   host:       'localhost',
   port:       '3306',
   user:       'root',
-  password:   'root',
+  password:   '123456',
   database:   'swgpro',
 });
 
@@ -43,8 +43,6 @@ db.insert=function (table, data){
     keys.push(key);
     vals.push('\''+filterValue(data[key])+'\'');
   }
-
-  console.log(`INSERT INTO ${table} (${keys.join(',')}) VALUES(${vals.join(',')})`)
 
   return db.query(`INSERT INTO ${table} (${keys.join(',')}) VALUES(${vals.join(',')})`);
 };
