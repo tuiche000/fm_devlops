@@ -36,5 +36,6 @@ ejs(app, {
 const router = new Router()
 router.use('/', require('./router/www'))
 router.use('/admin', require('./router/admin'))
+router.use('/api', require('./router/api'))
 app.use(router.routes())
 

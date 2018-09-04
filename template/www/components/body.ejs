@@ -1,17 +1,25 @@
 <% 
   var body = curInfo
 %>
-<% if (body) { %>
-<div class="book-body">
+  <% if (body) { %>
+
+    <div class="book-body">
       <div class="body-inner">
         <div class="page-wrapper" tabindex="-1" role="main">
           <div class="page-inner">
             <div id="book-search-results">
               <div class="search-noresults">
                 <section class="normal markdown-section">
-                  <h1><%= body.category_name %></h1>
-                  <h3><%= body.title %></h3>
-                  <p><%= JSON.parse(body.content).method %> : <%= JSON.parse(body.content).api %></p>
+                  <h1>
+                    <%= body.category_name %>
+                  </h1>
+                  <h3>
+                    <%= body.title %>
+                  </h3>
+                  <p>
+                    <%= JSON.parse(body.content).method %> :
+                      <%= JSON.parse(body.content).api %>
+                  </p>
                   <!-- <table>
                     <thead>
                       <tr>
@@ -42,20 +50,190 @@
                       </tr>
                     </tbody>
                   </table> -->
-                  
+
                   <p><strong>入参示例：</strong></p>
                   <%- body.api_import %>
 
-                  <br>
-                  <p><strong>出参示例：</strong></p>
-                  <%- body.api_export %>
+                    <p><strong>出参示例：</strong></p>
+                    <%- body.api_export %>
                 </section>
 
+
+                <br>
+                <hr><br>
+
+                <div class="try_it_out row">
+                  <div class="col-md-6">
+                    <h2>模拟请求</h2>
+
+
+                    <div id="accordion">
+                      <div class="card">
+                        <div class="card-header">
+                          <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                            GET
+                          </a>
+                        </div>
+                        <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                          <div class="card-body">
+                            <div class="form-group">
+                              <label for="user">url:</label>
+                              <input type="url" class="form-control" id="url" value="http://115.159.110.221:827/zhengongfutest/GetStoreDetail?StoreId=mc000"
+                                required>
+                            </div>
+                            <div class="header_box">
+                              <div class="input-group header">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">header</span>
+                                </div>
+                                <input type="text" class="form-control header_key" value="pi" placeholder="key">
+                                <input type="text" class="form-control header_value" value="F8166EBC-81EC-44FE-9268-2980683B068C" placeholder="value" style="flex:3">
+                              </div>
+                              <div class="input-group header">
+                                  <div class="input-group-prepend">
+                                    <span class="input-group-text">header</span>
+                                  </div>
+                                  <input type="text" class="form-control header_key" value="Channel" placeholder="key">
+                                  <input type="text" class="form-control header_value" value="zhengongfu" placeholder="value" style="flex:3">
+                                </div>
+                            </div>
+                            <br>
+                            <button type="button" class="btn btn-primary add">添加一个自定义头</button>
+                            <button type="button" class="btn btn-primary sub">模拟请求接口</button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="card-header">
+                          <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                            POST
+                          </a>
+                        </div>
+                        <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                          暂不支持POST...开发中...
+                          <!-- <div class="card-body">
+                            <div class="form-group">
+                              <label for="user">url:</label>
+                              <input type="url" class="form-control" id="url" required>
+                            </div>
+                            <div class="form-group">
+                              <label for="body">body:</label>
+                              <textarea class="form-control" name="body" rows="5" id="body"></textarea>
+                            </div>
+                            <div class="form-group">
+                              <label for="header">header:</label>
+                              <textarea class="form-control" name="header" rows="5" id="header"></textarea>
+                            </div>
+                            <br>
+                            <button type="button" class="btn btn-primary">模拟请求接口</button> -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <h2>请求结果</h2>
+                    <!-- <pre id="response"></pre> -->
+                    <!-- <textarea id="response"></textarea> -->
+                    <pre style="background: #f6f8fa;"><code id="response"></code></pre>
+
+                  </div>
+                </div>
 
 
 
               </div>
-              <!-- <div class="search-results">
+            </div>
+            <script>
+
+              /*
+                美化json  
+              */
+
+              function format(txt, compress/*是否为压缩模式*/) {/* 格式化JSON源码(对象转换为JSON文本) */
+                var indentChar = '    ';
+                if (/^\s*$/.test(txt)) {
+                  alert('数据为空,无法格式化! ');
+                  return;
+                }
+                try { var data = eval('(' + txt + ')'); }
+                catch (e) {
+                  alert('数据源语法错误,格式化失败! 错误信息: ' + e.description, 'err');
+                  return;
+                };
+                var draw = [], last = false, This = this, line = compress ? '' : '\n', nodeCount = 0, maxDepth = 0;
+
+                var notify = function (name, value, isLast, indent/*缩进*/, formObj) {
+                  nodeCount++;/*节点计数*/
+                  for (var i = 0, tab = ''; i < indent; i++)tab += indentChar;/* 缩进HTML */
+                  tab = compress ? '' : tab;/*压缩模式忽略缩进*/
+                  maxDepth = ++indent;/*缩进递增并记录*/
+                  if (value && value.constructor == Array) {/*处理数组*/
+                    draw.push(tab + (formObj ? ('"' + name + '":') : '') + '[' + line);/*缩进'[' 然后换行*/
+                    for (var i = 0; i < value.length; i++)
+                      notify(i, value[i], i == value.length - 1, indent, false);
+                    draw.push(tab + ']' + (isLast ? line : (',' + line)));/*缩进']'换行,若非尾元素则添加逗号*/
+                  } else if (value && typeof value == 'object') {/*处理对象*/
+                    draw.push(tab + (formObj ? ('"' + name + '":') : '') + '{' + line);/*缩进'{' 然后换行*/
+                    var len = 0, i = 0;
+                    for (var key in value) len++;
+                    for (var key in value) notify(key, value[key], ++i == len, indent, true);
+                    draw.push(tab + '}' + (isLast ? line : (',' + line)));/*缩进'}'换行,若非尾元素则添加逗号*/
+                  } else {
+                    if (typeof value == 'string') value = '"' + value + '"';
+                    draw.push(tab + (formObj ? ('"' + name + '":') : '') + value + (isLast ? '' : ',') + line);
+                  };
+                };
+                var isLast = true, indent = 0;
+                notify('', data, isLast, indent, false);
+                return draw.join('');
+              }
+
+                /*  
+                  美化json END
+                */
+
+            </script>
+            <script>
+              let sub = $(".try_it_out .sub")
+              let add = $(".try_it_out .add")
+              let header = $(".header")
+              let header_box = $(".header_box")
+              sub.click(async function () {
+
+                let len = $('.header').length
+                // console.log($(".header")[0].find(''))
+                // console.log($(".header")[0].find('.header_value'))
+                // if ($(".header")[0].find('.header_key') && $(".header")[0].find('.header_value')) {
+
+                // }
+                let headers = {}
+                for (let i = 0; i < len; i++) {
+                  headers[$('.header .header_key').eq(i).val()] = $('.header .header_value').eq(i).val()
+                }
+
+
+                let data = {
+                  url: $("#url").val(),
+                }
+                let response = await $.ajax({
+                  url: 'http://172.16.13.4:8080/api/request',
+                  data,
+                  headers,
+                  dataType: 'json',
+                  method: 'GET',
+                })
+
+                // 
+
+                let new_json = format(JSON.stringify(response))
+
+                $('#response').html(new_json)
+              })
+              add.click(async function () {
+                header_box.append(header.prop("outerHTML"))
+              })
+            </script>
+            <!-- <div class="search-results">
                 <div class="has-results">
                   <h1 class="search-results-title">
                     <span class="search-results-count"></span> 个结果 "<span class="search-query"></span>"
@@ -68,16 +246,16 @@
                   </h1>
                 </div>
               </div> -->
-            </div>
           </div>
         </div>
-        <% include footer.ejs %>
       </div>
+      <!-- <% include footer.ejs %> -->
+    </div>
 
 
 
 
-      <!-- <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/MINA.html" class="navigation navigation-next navigation-unique"
+    <!-- <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/MINA.html" class="navigation navigation-next navigation-unique"
         aria-label="下一页: 框架" style="margin-right: 6px;">
         <i class="fa fa-angle-right"></i>
       </a> -->
