@@ -238,7 +238,7 @@
                   url: $("#url").val(),
                 }
                 let response = await $.ajax({
-                  url: 'http://172.16.13.4:8080/api/request',
+                  url: 'http://localhost:8080/api/request',
                   data,
                   headers,
                   dataType: 'json',
@@ -285,7 +285,7 @@
                 console.log('data', data)
 
                 let response = await $.ajax({
-                  url: 'http://172.16.13.4:8080/api/request',
+                  url: 'http://localhost:8080/api/request',
                   data,
                   headers,
                   dataType: 'json',
