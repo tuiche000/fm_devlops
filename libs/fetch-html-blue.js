@@ -1,7 +1,6 @@
 const assert = require('assert');
 const urllib = require('url');
-const zlib=require('zlib');
-
+const zlib = require('zlib');
 
 const _headers = {
   'accept-encoding': 'gzip, deflate, br',
@@ -106,8 +105,13 @@ function fetchHtml(options, fnProc) {
           }));
         }
       });
+      let postdata = ''
+      if (options.postdata) {
+        postdata = require('querystring').stringify(JSON.parse(options.postdata))
+        console.log(postdata)
+      }
       _req_obj.on('error', e => reject(e));
-      _req_obj.write(options.postdata || '');
+      _req_obj.write(postdata);
       _req_obj.end();
     }
   });

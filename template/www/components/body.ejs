@@ -90,12 +90,12 @@
                                 <input type="text" class="form-control header_value" value="F8166EBC-81EC-44FE-9268-2980683B068C" placeholder="value" style="flex:3">
                               </div>
                               <div class="input-group header">
-                                  <div class="input-group-prepend">
-                                    <span class="input-group-text">header</span>
-                                  </div>
-                                  <input type="text" class="form-control header_key" value="Channel" placeholder="key">
-                                  <input type="text" class="form-control header_value" value="zhengongfu" placeholder="value" style="flex:3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">header</span>
                                 </div>
+                                <input type="text" class="form-control header_key" value="Channel" placeholder="key">
+                                <input type="text" class="form-control header_value" value="zhengongfu" placeholder="value" style="flex:3">
+                              </div>
                             </div>
                             <br>
                             <button type="button" class="btn btn-primary add">添加一个自定义头</button>
@@ -103,29 +103,43 @@
                           </div>
                         </div>
                       </div>
-                      <div class="card">
+                      <div class="card post_request">
                         <div class="card-header">
                           <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
                             POST
                           </a>
                         </div>
                         <div id="collapseTwo" class="collapse" data-parent="#accordion">
-                          暂不支持POST...开发中...
-                          <!-- <div class="card-body">
+
+                          <div class="card-body">
                             <div class="form-group">
-                              <label for="user">url:</label>
-                              <input type="url" class="form-control" id="url" required>
+                              <label for="post_url">url:</label>
+                              <input type="url" class="form-control" id="post_url" value="https://xcxdev.sandload.cn/qdmtest/Ad/GetList" required>
                             </div>
                             <div class="form-group">
-                              <label for="body">body:</label>
-                              <textarea class="form-control" name="body" rows="5" id="body"></textarea>
+                              <label for="post_body">body:</label>
+                              <textarea class="form-control" name="post_body" rows="5" id="post_body">{"channel": 3,"pageSize": 10,"pageNo": 1,"status": 2}</textarea>
                             </div>
-                            <div class="form-group">
-                              <label for="header">header:</label>
-                              <textarea class="form-control" name="header" rows="5" id="header"></textarea>
+                            <div class="header_box">
+                              <div class="input-group post_header">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">header</span>
+                                </div>
+                                <input type="text" class="form-control header_key" value="pi" placeholder="key">
+                                <input type="text" class="form-control header_value" value="DD7576AB-6DDE-4203-8977-55DE2C3DBEA8" placeholder="value" style="flex:3">
+                              </div>
+                              <div class="input-group post_header">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">header</span>
+                                </div>
+                                <input type="text" class="form-control header_key" value="Channel" placeholder="key">
+                                <input type="text" class="form-control header_value" value="qdm" placeholder="value" style="flex:3">
+                              </div>
                             </div>
                             <br>
-                            <button type="button" class="btn btn-primary">模拟请求接口</button> -->
+                            <button type="button" class="btn btn-primary post_add">添加一个自定义头</button>
+                            <button type="button" class="btn btn-primary post_sub">模拟请求接口</button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -196,20 +210,28 @@
             <script>
               let sub = $(".try_it_out .sub")
               let add = $(".try_it_out .add")
+              let post_sub = $(".post_sub") // POST 模拟请求
+
               let header = $(".header")
               let header_box = $(".header_box")
+
+
+              /*
+                GET 模拟请求
+              */
               sub.click(async function () {
 
+                /**
+                  header START 
+                **/
                 let len = $('.header').length
-                // console.log($(".header")[0].find(''))
-                // console.log($(".header")[0].find('.header_value'))
-                // if ($(".header")[0].find('.header_key') && $(".header")[0].find('.header_value')) {
-
-                // }
                 let headers = {}
                 for (let i = 0; i < len; i++) {
                   headers[$('.header .header_key').eq(i).val()] = $('.header .header_value').eq(i).val()
                 }
+                /**
+                  header END
+                **/
 
 
                 let data = {
@@ -232,6 +254,54 @@
               add.click(async function () {
                 header_box.append(header.prop("outerHTML"))
               })
+              /*
+                GET 模拟请求 END
+              */
+
+
+
+              /*
+                POST 模拟请求
+              */
+              post_sub.click(async function () {
+
+                /**
+                  header START 
+                **/
+                let len = $('.post_header').length
+                let headers = {}
+                for (let i = 0; i < len; i++) {
+                  headers[$('.post_header .header_key').eq(i).val()] = $('.post_header .header_value').eq(i).val()
+                }
+                /**
+                  header END
+                **/
+
+                let data = {
+                  url: $("#post_url").val(),
+                  body: $("#post_body").val(),
+                }
+
+                console.log('data', data)
+
+                let response = await $.ajax({
+                  url: 'http://172.16.13.4:8080/api/request',
+                  data,
+                  headers,
+                  dataType: 'json',
+                  method: 'POST',
+                })
+
+                console.log('1231231')
+
+                let new_json = format(JSON.stringify(response))
+
+                $('#response').html(new_json)
+
+              })
+              /*
+                POST 模拟请求 END
+              */
             </script>
             <!-- <div class="search-results">
                 <div class="has-results">
