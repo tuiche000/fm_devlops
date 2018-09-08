@@ -33,4 +33,12 @@ router.get('api', async (ctx, next) => {
 
 })
 
+router.get('json_formatter', async (ctx, next) => {
+  let categories = await ctx.db.query(`SELECT * FROM \`categories\` WHERE \`pid\`=${1} ORDER BY \`rank\``)
+  await ctx.render('./www/json_formatter', {
+    categories: categories,
+  })
+
+})
+
 module.exports = router.routes();
