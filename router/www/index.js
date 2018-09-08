@@ -3,6 +3,13 @@ const Router = require('koa-router');
 let router = new Router();
 
 router.get('/', async (ctx, next) => {
+
+  ctx.redirect('/api')
+
+})
+
+router.get('api', async (ctx, next) => {
+
   let curInfo = ['']
   if (ctx.query.infoId) {
     let infoId = ctx.query.infoId
@@ -22,6 +29,7 @@ router.get('/', async (ctx, next) => {
     info: info,
     curInfo: curInfo[0]
   })
+
 
 })
 

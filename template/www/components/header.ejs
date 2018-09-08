@@ -10,7 +10,7 @@
       </div>
         <ul class="top_sub_list">
           <% categories.forEach(json=>{ %>
-          <li class="sub_nav_item selected"><a href=""><%=json.name%></a></li>
+          <li class="sub_nav_item selected"><a href="<%= json.path %>"><%=json.name%></a></li>
           <% }); %>
           <!-- <li class="sub_nav_item selected"><a href="https://developers.weixin.qq.com/miniprogram/dev/">api接口</a></li> -->
           <!-- <li class="sub_nav_item"><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/MINA.html">非码小程序框架</a></li> -->
@@ -24,7 +24,7 @@
 
     <div id="book-search-input" role="search">
       <form>
-        <label for="search-input" class="search-icon" id="js-search-icon"></label>
+        <label for="search-input" class="search-icon" id="js-search-icon" style="margin-bottom:0"></label>
         <input type="text" id="search-input" name="search-input" placeholder="搜索">
         <button type="reset" class="clear-input-btn"></button>
       </form>

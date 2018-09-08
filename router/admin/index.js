@@ -44,13 +44,14 @@ router.get('/del', async ctx => {
   await ctx.redirect('/admin')
 })
 router.post('/', async ctx => {
-  let { name, pid, rank, is_hide, is_display } = ctx.request.fields
+  let { name, pid, path, rank, is_hide, is_display } = ctx.request.fields
   if (name && pid && rank && is_hide && is_display) {
     let id = ctx.utils.uuid()
     let categories = {
       id,
       name,
       pid,
+      path,
       rank,
       is_hide,
       is_display,

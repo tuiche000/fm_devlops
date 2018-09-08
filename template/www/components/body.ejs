@@ -146,9 +146,7 @@
                   </div>
                   <div class="col-md-6">
                     <h2>请求结果</h2>
-                    <!-- <pre id="response"></pre> -->
-                    <!-- <textarea id="response"></textarea> -->
-                    <pre style="background: #f6f8fa;"><code id="response"></code></pre>
+                    <div class="jsonFormat" style="background: #f6f8fa"></div>
 
                   </div>
                 </div>
@@ -157,57 +155,19 @@
 
               </div>
             </div>
+            
             <script>
-
-              /*
-                美化json  
-              */
-
-              function format(txt, compress/*是否为压缩模式*/) {/* 格式化JSON源码(对象转换为JSON文本) */
-                var indentChar = '    ';
-                if (/^\s*$/.test(txt)) {
-                  alert('数据为空,无法格式化! ');
-                  return;
-                }
-                try { var data = eval('(' + txt + ')'); }
-                catch (e) {
-                  alert('数据源语法错误,格式化失败! 错误信息: ' + e.description, 'err');
-                  return;
-                };
-                var draw = [], last = false, This = this, line = compress ? '' : '\n', nodeCount = 0, maxDepth = 0;
-
-                var notify = function (name, value, isLast, indent/*缩进*/, formObj) {
-                  nodeCount++;/*节点计数*/
-                  for (var i = 0, tab = ''; i < indent; i++)tab += indentChar;/* 缩进HTML */
-                  tab = compress ? '' : tab;/*压缩模式忽略缩进*/
-                  maxDepth = ++indent;/*缩进递增并记录*/
-                  if (value && value.constructor == Array) {/*处理数组*/
-                    draw.push(tab + (formObj ? ('"' + name + '":') : '') + '[' + line);/*缩进'[' 然后换行*/
-                    for (var i = 0; i < value.length; i++)
-                      notify(i, value[i], i == value.length - 1, indent, false);
-                    draw.push(tab + ']' + (isLast ? line : (',' + line)));/*缩进']'换行,若非尾元素则添加逗号*/
-                  } else if (value && typeof value == 'object') {/*处理对象*/
-                    draw.push(tab + (formObj ? ('"' + name + '":') : '') + '{' + line);/*缩进'{' 然后换行*/
-                    var len = 0, i = 0;
-                    for (var key in value) len++;
-                    for (var key in value) notify(key, value[key], ++i == len, indent, true);
-                    draw.push(tab + '}' + (isLast ? line : (',' + line)));/*缩进'}'换行,若非尾元素则添加逗号*/
-                  } else {
-                    if (typeof value == 'string') value = '"' + value + '"';
-                    draw.push(tab + (formObj ? ('"' + name + '":') : '') + value + (isLast ? '' : ',') + line);
-                  };
-                };
-                var isLast = true, indent = 0;
-                notify('', data, isLast, indent, false);
-                return draw.join('');
+              var options = {
+                dom: '.jsonFormat',          //用于放置的dom的选择器
+                singleTab: "  ",  //单个tab
+                tabSize: 2,       //缩进数量
+                quoteKeys: true,  //key是否用双引号包含
+                imgCollapsed: "images/Collapsed.gif", //收起的图片路径
+                imgExpanded: "images/Expanded.gif",  //展开的图片路径
+                isCollapsible: true //是否支持展开收起
               }
+              $(".jsonFormat").jsonFormat(options);
 
-                /*  
-                  美化json END
-                */
-
-            </script>
-            <script>
               let sub = $(".try_it_out .sub")
               let add = $(".try_it_out .add")
               let post_sub = $(".post_sub") // POST 模拟请求
@@ -238,18 +198,16 @@
                   url: $("#url").val(),
                 }
                 let response = await $.ajax({
-                  url: 'http://localhost:8080/api/request',
+                  url: 'http://172.16.13.4:8080/api/request',
                   data,
                   headers,
                   dataType: 'json',
                   method: 'GET',
                 })
 
-                // 
+                //使用配置项初始化
+                $(".jsonFormat").jsonFormat({ data: JSON.stringify(response) });
 
-                let new_json = format(JSON.stringify(response))
-
-                $('#response').html(new_json)
               })
               add.click(async function () {
                 header_box.append(header.prop("outerHTML"))
@@ -282,21 +240,16 @@
                   body: $("#post_body").val(),
                 }
 
-                console.log('data', data)
-
                 let response = await $.ajax({
-                  url: 'http://localhost:8080/api/request',
+                  url: 'http://172.16.13.4:8080/api/request',
                   data,
                   headers,
                   dataType: 'json',
                   method: 'POST',
                 })
 
-                console.log('1231231')
-
-                let new_json = format(JSON.stringify(response))
-
-                $('#response').html(new_json)
+                //使用配置项初始化
+                $(".jsonFormat").jsonFormat({ data: JSON.stringify(response) });
 
               })
               /*
