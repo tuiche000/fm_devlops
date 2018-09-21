@@ -26,11 +26,11 @@
     language: "zh_CN",
     plugins: "autoresize"
   });
-  tinymce.init({
-    selector: '#tinymce_export',  // change this value according to your HTML
-    language: "zh_CN",
-    plugins: "autoresize"
-  });
+  // tinymce.init({
+  //   selector: '#tinymce_export',  // change this value according to your HTML
+  //   language: "zh_CN",
+  //   plugins: "autoresize"
+  // });
 </script>
 <style>
   body {
@@ -134,7 +134,8 @@
       <div class="form-group">
         <label for="export">出参示例:</label>
       </div>
-      <textarea id="tinymce_export" name="api_export"></textarea>
+      <!-- <textarea id="tinymce_export" name="api_export"></textarea> -->
+      <textarea class="form-control" rows="15" id="tinymce_export" name="api_export"></textarea>
 
 
       <button type="submit" class="btn btn-primary">提交</button>

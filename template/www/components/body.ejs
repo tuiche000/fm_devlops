@@ -55,8 +55,30 @@
                   <%- body.api_import %>
 
                     <p><strong>出参示例：</strong></p>
-                    <%- body.api_export %>
+                    <div id="export_example">
+                      <%- body.api_export %>
+                    </div>
+
                 </section>
+
+                <script>
+
+                  var options = {
+                    dom: '.jsonFormat',          //用于放置的dom的选择器
+                    singleTab: "  ",  //单个tab
+                    tabSize: 2,       //缩进数量
+                    quoteKeys: true,  //key是否用双引号包含
+                    imgCollapsed: "images/Collapsed.gif", //收起的图片路径
+                    imgExpanded: "images/Expanded.gif",  //展开的图片路径
+                    isCollapsible: true //是否支持展开收起
+                  }
+                  $("#export_example").jsonFormat(options);
+
+                  let text = $("#export_example").text()
+
+                  //使用配置项初始化
+                  $("#export_example").jsonFormat({ data: text });
+                </script>
 
 
                 <br>
@@ -78,7 +100,7 @@
                           <div class="card-body">
                             <div class="form-group">
                               <label for="user">url:</label>
-                              <input type="url" class="form-control" id="url" value="http://115.159.110.221:827/zhengongfutest/GetStoreDetail?StoreId=mc000"
+                              <input type="url" class="form-control" id="url" value="https://xcxdev.sandload.cn/qdmtest/GetDish?timeStamp=&defaultShow=2&labelName=&nodeId=&sortType=&orderBy=&type=1&userId=115363780851568828&storeId=99993"
                                 required>
                             </div>
                             <div class="header_box">
@@ -87,14 +109,14 @@
                                   <span class="input-group-text">header</span>
                                 </div>
                                 <input type="text" class="form-control header_key" value="pi" placeholder="key">
-                                <input type="text" class="form-control header_value" value="F8166EBC-81EC-44FE-9268-2980683B068C" placeholder="value" style="flex:3">
+                                <input type="text" class="form-control header_value" value="DD7576AB-6DDE-4203-8977-55DE2C3DBEA8" placeholder="value" style="flex:3">
                               </div>
                               <div class="input-group header">
                                 <div class="input-group-prepend">
                                   <span class="input-group-text">header</span>
                                 </div>
                                 <input type="text" class="form-control header_key" value="Channel" placeholder="key">
-                                <input type="text" class="form-control header_value" value="zhengongfu" placeholder="value" style="flex:3">
+                                <input type="text" class="form-control header_value" value="qdm" placeholder="value" style="flex:3">
                               </div>
                             </div>
                             <br>
@@ -155,7 +177,7 @@
 
               </div>
             </div>
-            
+
             <script>
               var options = {
                 dom: '.jsonFormat',          //用于放置的dom的选择器
@@ -197,8 +219,10 @@
                 let data = {
                   url: $("#url").val(),
                 }
+                // console.log($("#url").val())
                 let response = await $.ajax({
-                  url: 'http://172.16.13.4:8080/api/request',
+                  url: $("#url").val(),
+                  // url: 'http://172.16.13.4:8080/api/request',
                   data,
                   headers,
                   dataType: 'json',
@@ -236,13 +260,14 @@
                 **/
 
                 let data = {
-                  url: $("#post_url").val(),
-                  body: $("#post_body").val(),
+                  // url: $("#post_url").val(),
+                  // body: $("#post_body").val(),
                 }
 
                 let response = await $.ajax({
-                  url: 'http://172.16.13.4:8080/api/request',
-                  data,
+                  url: $("#post_url").val(),
+                  // url: 'http://172.16.13.4:8080/api/request',
+                  data: $("#post_body").val(),
                   headers,
                   dataType: 'json',
                   method: 'POST',
